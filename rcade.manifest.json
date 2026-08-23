@@ -1,0 +1,17 @@
+{
+  "name": "game-two",
+  "display_name": "game-two",
+  "description": "game-two",
+  "visibility": "public",
+  "authors": [
+    {
+      "display_name": "cyrene zhang",
+      "recurse_id": 0
+    },
+    {
+      "display_name": "shenai chan",
+      "recurse_id": 0
+    }
+  ],
+  "dependencies": []
+}
