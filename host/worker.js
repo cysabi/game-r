@@ -53,6 +53,6 @@ self.onmessage = function (event) {
 console.debug("Web Worker script loaded. Waiting for OffscreenCanvas message...");
 
 function init() {
-    importScripts("./app/rose-sample-rs.js");
-    wasm_bindgen({ module_or_path: "./app/rose-sample-rs_bg.wasm" });
+    importScripts("./app/game-r.js");
+    wasm_bindgen({ module_or_path: "./app/game-r_bg.wasm" });
 }

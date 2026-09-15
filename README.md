@@ -1,7 +1,3 @@
-# skdfj
-
-skdfj
-
 ## About RCade
 
 This game is built for [RCade](https://rcade.recurse.com), a custom arcade cabinet at The Recurse Center. Learn more about the project at [github.com/fcjr/RCade](https://github.com/fcjr/RCade).
@@ -14,13 +10,23 @@ This game is built for [RCade](https://rcade.recurse.com), a custom arcade cabin
 
 ## Getting Started
 
-Start the development server:
+Start the development server and the RCade dev shell together:
+
+```bash
+cargo dev
+```
+
+This runs `trunk serve` (compiles the Rust code to WebAssembly with hot
+reloading) and, once it is listening, `npx rcade@latest dev http://localhost:8080`.
+Ctrl+C stops both. Extra arguments go to trunk (`cargo dev --release`), and
+`PORT=9000 cargo dev` changes the port.
+
+To run the pieces by hand instead:
 
 ```bash
 trunk serve
+npx rcade@latest dev http://localhost:8080
 ```
-
-This compiles the Rust code to WebAssembly and serves it with hot reloading.
 
 ## Building
 

@@ -1,8 +1,0 @@
-{
-  "scripts": {
-    "dev": "rcade dev http://localhost:8080"
-  },
-  "devDependencies": {
-    "rcade": "^0.0.50"
-  }
-}

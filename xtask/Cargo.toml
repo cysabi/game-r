@@ -1,0 +1,10 @@
+[package]
+name = "xtask"
+version = "0.0.0"
+edition = "2024"
+publish = false
+
+# Dev helper only. Run it with `cargo dev` (alias in .cargo/config.toml).
+# Not referenced by host/index.html, so Trunk never builds it for wasm.
+
+[dependencies]
