@@ -40,6 +40,7 @@ wasm-bindgen-futures = "0.4.56"
 console_error_panic_hook = "0.1.7"
 rand = "0.9.2"
 rcade-plugin-input-classic = "0.2"
+rcade-plugin-input-spinners = { git = "https://github.com/cysabi/RCade", rev = "b74806c18cf218d10cbbf4f7602bdc16ef92dfee" }
 bevy = { version = "0.17.3", default-features = false, features = ["zstd_rust", "bevy_core_pipeline", "bevy_pbr", "bevy_render", "bevy_asset", "bevy_scene", "bevy_window", "bevy_sprite", "bevy_sprite_render", "bevy_log", "tonemapping_luts", "webgl2", "dynamic_linking"] }
 raw-window-handle = { version = "0.6.2", default-features = false }
 gloo-timers = { version = "0.3.0", features = ["futures"] }

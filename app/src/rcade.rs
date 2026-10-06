@@ -3,6 +3,7 @@ use bevy::{
     prelude::*,
 };
 use rcade_plugin_input_classic::ClassicController;
+use rcade_plugin_input_spinners::{P1, P2, SpinnerState};
 
 use crate::hook::{self, RcadePluginExt, get_offscreen_canvas};
 
@@ -20,6 +21,7 @@ pub struct PlayerController {
     pub right: ButtonState,
     pub a: ButtonState,
     pub b: ButtonState,
+    pub spinner: SpinnerState,
 }
 
 #[derive(Resource, Default, Clone, Copy)]
@@ -80,7 +82,10 @@ impl RcadeApp {
     }
 }
 
-fn poll_controller(device: NonSend<ClassicController>, mut controller: ResMut<Controller>) {
+fn poll_controller(
+    device: NonSend<ClassicController>,
+    mut controller: ResMut<Controller>,
+) {
     let state = device.state();
 
     let last_controller = controller.clone();
@@ -100,6 +105,7 @@ fn poll_controller(device: NonSend<ClassicController>, mut controller: ResMut<Co
     controller.player_a.a.pressed = state.player1_a;
     controller.player_a.b.just_pressed = !last_controller.player_a.b.pressed && state.player1_b;
     controller.player_a.b.pressed = state.player1_b;
+    controller.player_a.spinner = P1.read();
 
     controller.player_b.up.just_pressed = !last_controller.player_b.up.pressed && state.player2_up;
     controller.player_b.up.pressed = state.player2_up;
@@ -116,4 +122,5 @@ fn poll_controller(device: NonSend<ClassicController>, mut controller: ResMut<Co
     controller.player_b.a.pressed = state.player2_a;
     controller.player_b.b.just_pressed = !last_controller.player_b.b.pressed && state.player2_b;
     controller.player_b.b.pressed = state.player2_b;
+    controller.player_b.spinner = P2.read();
 }
